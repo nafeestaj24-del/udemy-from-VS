@@ -191,6 +191,21 @@ a {
     padding: 24px;
     max-width: 440px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity:0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .hero-card h1 {
@@ -232,6 +247,11 @@ a {
     background: #fff;
     cursor: pointer;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .course-card img {

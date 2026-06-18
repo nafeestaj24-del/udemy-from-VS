@@ -1,0 +1,424 @@
+/* ==========================================
+   GLOBAL RESET & FONTS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #2d2f31;
+    background-color: #ffffff;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================
+   REUSABLE UTILITIES
+   ========================================== */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn {
+    padding: 10px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #2d2f31;
+    font-size: 14px;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: #2d2f31;
+}
+
+.btn-login:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.btn-signup {
+    background-color: #2d2f31;
+    color: #ffffff;
+}
+
+.btn-signup:hover {
+    background-color: #1c1d1f;
+}
+
+/* ==========================================
+   1. NAVBAR SECTION
+   ========================================== */
+.main-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid #d1d7dc;
+    gap: 20px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a435f0;
+}
+
+.categories-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #2d2f31;
+    cursor: pointer;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: #f7f9fa;
+    border: 1px solid #1c1d1f;
+    border-radius: 20px;
+    padding: 0 16px;
+    height: 46px;
+}
+
+.search-icon {
+    color: #6a6f73;
+    margin-right: 12px;
+}
+
+.search-container input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.cart-icon {
+    font-size: 20px;
+    color: #2d2f31;
+}
+
+/* ==========================================
+   2. MENU BAR SECTION
+   ========================================== */
+.menu-bar {
+    border-bottom: 1px solid #d1d7dc;
+}
+
+.menu-bar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+    gap: 24px;
+}
+
+.menu-bar a {
+    font-size: 14px;
+    color: #6a6f73;
+}
+
+.menu-bar a:hover {
+    color: #a435f0;
+}
+
+/* ==========================================
+   NEW: HERO LANDING BANNER STYLING
+   ========================================== */
+.hero-section {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 400px;
+    /* Clean, reliable learning-themed image link */
+    background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.hero-card {
+    background-color: #ffffff;
+    padding: 24px;
+    max-width: 440px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-card h1 {
+    font-size: 32px;
+    font-family: Georgia, serif;
+    margin-bottom: 8px;
+    color: #1c1d1f;
+}
+
+.hero-card p {
+    font-size: 16px;
+    color: #2d2f31;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   3 & 5. COURSE CARD COMPONENTS (GRID SYSTEM)
+   ========================================== */
+.course-section {
+    margin-top: 40px;
+}
+
+.course-section h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d1d7dc;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.course-card img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover; /* Keeps real photos proportional without warping */
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ecebfe;
+    color: #1e1e1c;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.course-info {
+    padding: 12px;
+}
+
+.course-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.instructor {
+    font-size: 12px;
+    color: #6a6f73;
+    margin-bottom: 4px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.rating-num {
+    font-weight: bold;
+    color: #b4690e;
+}
+
+.stars {
+    color: #b4690e;
+}
+
+.reviews {
+    color: #6a6f73;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ==========================================
+   4. RECOMMENDED TOPICS SECTION
+   ========================================== */
+.topics-section {
+    margin-top: 40px;
+    background-color: #f7f9fa;
+    padding: 24px;
+}
+
+.topics-section h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.topics-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.topic-tag {
+    background-color: #ffffff;
+    border: 1px solid #d1d7dc;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.topic-tag:hover {
+    background-color: #e4e8eb;
+}
+
+.topic-suggestion-box {
+    border-top: 1px solid #d1d7dc;
+    padding-top: 16px;
+}
+
+.topic-suggestion-box p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.suggestion-input-group {
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+    gap: 8px;
+}
+
+.suggestion-input-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #1c1d1f;
+    outline: none;
+}
+
+/* ==========================================
+   6. FOOTER SECTION
+   ========================================== */
+.main-footer {
+    background-color: #1c1d1f;
+    color: #ffffff;
+    padding: 48px 24px 24px 24px;
+    margin-top: 60px;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    border-bottom: 1px solid #3e4143;
+    padding-bottom: 32px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column a {
+    font-size: 14px;
+    color: #d1d7dc;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a435f0;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #949a9e;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .main-navbar {
+        padding: 12px 16px;
+    }
+
+    .categories-btn {
+        display: none;
+    }
+
+    .hero-section {
+        height: auto;
+        background-image: none; /* Removes big background image on small mobile screens */
+        background-color: #f7f9fa;
+        padding: 0;
+    }
+
+    .hero-card {
+        max-width: 100%;
+        box-shadow: none;
+        padding: 24px 16px;
+    }
+
+    .hero-card h1 {
+        font-size: 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 16px;
+    }
+}
